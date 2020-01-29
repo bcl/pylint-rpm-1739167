@@ -1,0 +1,4 @@
+FROM registry.fedoraproject.org/fedora:31
+COPY test-rpm.py .
+RUN dnf update -y && dnf -y install pylint python3-rpm
+CMD ./test-rpm.py; pylint ./test-rpm.py
